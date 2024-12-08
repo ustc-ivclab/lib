@@ -1,0 +1,7 @@
+mklib
+*.a
+*.obj
+*.lib
+
+*.pdf
+*.zip
