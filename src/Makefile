@@ -1182,47 +1182,47 @@ endif
 CX_OBJS = $(patsubst %.cx,$(OBJ)/%.obj,$(notdir $(CX_SOURCE)))
 
 $(CX_OBJS): $(OBJ)/%.obj: %.cx
-	$(CC) $^ $(STANDARD_FLAGS) $(EXTRA_FLAGS) $(UNIVERSAL_FLAGS) $(C_FLAGS) -I$(INC) -fr $(OBJ) -fs $(OBJ) -ft $(OBJ)
+	$(CC) $^ $(STANDARD_FLAGS) $(EXTRA_FLAGS) $(UNIVERSAL_FLAGS) $(C_FLAGS) -I$(INC) -fr=$(OBJ) -fs=$(OBJ) -ft=$(OBJ)
 
 ASM_OBJS = $(patsubst %.asm,$(OBJ)/%.obj,$(notdir $(ASM_SOURCE)))
 
 $(ASM_OBJS): $(OBJ)/%.obj: %.asm
-	$(CC) $^ $(STANDARD_FLAGS) $(EXTRA_FLAGS) $(UNIVERSAL_FLAGS) $(C_FLAGS) -I$(INC) -fr $(OBJ) -fs $(OBJ) -ft $(OBJ)
+	$(CC) $^ $(STANDARD_FLAGS) $(EXTRA_FLAGS) $(UNIVERSAL_FLAGS) $(C_FLAGS) -I$(INC) -fr=$(OBJ) -fs=$(OBJ) -ft=$(OBJ)
 
 C_OBJS = $(patsubst %.c,$(OBJ)/%.obj,$(notdir $(C_SOURCE)))
 
 $(C_OBJS): $(OBJ)/%.obj: %.c
-	$(CC) $^ $(STANDARD_FLAGS) $(EXTRA_FLAGS) $(UNIVERSAL_FLAGS) $(C_FLAGS) -I$(INC) -fr $(OBJ) -fs $(OBJ) -ft $(OBJ)
+	$(CC) $^ $(STANDARD_FLAGS) $(EXTRA_FLAGS) $(UNIVERSAL_FLAGS) $(C_FLAGS) -I$(INC) -fr=$(OBJ) -fs=$(OBJ) -ft=$(OBJ)
 
 LINASM_OBJS = $(patsubst %.sa,$(OBJ)/%.obj,$(notdir $(LINASM_SOURCE)))
 
 $(LINASM_OBJS): $(OBJ)/%.obj: %.sa
-	$(CC) $^ $(STANDARD_FLAGS) $(EXTRA_FLAGS) $(UNIVERSAL_FLAGS) $(C_FLAGS) -I$(INC) -fr $(OBJ) -fs $(OBJ) -ft $(OBJ)
+	$(CC) $^ $(STANDARD_FLAGS) $(EXTRA_FLAGS) $(UNIVERSAL_FLAGS) $(C_FLAGS) -I$(INC) -fr=$(OBJ) -fs=$(OBJ) -ft=$(OBJ)
 
 CX0_OBJS = $(patsubst %.cx0,$(OBJ)/%.obj,$(notdir $(CX0_SOURCE)))
 
 $(CX0_OBJS): $(OBJ)/%.obj: %.cx0
-	$(CC) $^ $(STANDARD_FLAGS) $(EXTRA_FLAGS) $(UNIVERSAL_FLAGS) $(C_FLAGS) -I$(INC) -fr $(OBJ) -fs $(OBJ) -ft $(OBJ)
+	$(CC) $^ $(STANDARD_FLAGS) $(EXTRA_FLAGS) $(UNIVERSAL_FLAGS) $(C_FLAGS) -I$(INC) -fr=$(OBJ) -fs=$(OBJ) -ft=$(OBJ)
 
 CPP_C_OBJS = $(patsubst %.c,$(OBJ)/%.obj,$(notdir $(CPP_C_SOURCE)))
 
 $(CPP_C_OBJS): $(OBJ)/%.obj: %.c
-	$(CC) $^ $(STANDARD_FLAGS) $(EXTRA_FLAGS) $(UNIVERSAL_FLAGS) $(CPP_FLAGS) -I$(INC) -fr $(OBJ) -fs $(OBJ) -ft $(OBJ)
+	$(CC) $^ $(STANDARD_FLAGS) $(EXTRA_FLAGS) $(UNIVERSAL_FLAGS) $(CPP_FLAGS) -I$(INC) -fr=$(OBJ) -fs=$(OBJ) -ft=$(OBJ)
 
 C__SCHED_2_OBJS = $(patsubst %.c,$(OBJ)/%.obj,$(notdir $(C__SCHED_2_SOURCE)))
 
 $(C__SCHED_2_OBJS): $(OBJ)/%.obj: %.c
-	$(CC) $^ $(STANDARD_FLAGS) $(EXTRA_FLAGS) $(UNIVERSAL_FLAGS) $(C_FLAGS) $(C__SCHED_2_FLAGS) -I$(INC) -fr $(OBJ) -fs $(OBJ) -ft $(OBJ)
+	$(CC) $^ $(STANDARD_FLAGS) $(EXTRA_FLAGS) $(UNIVERSAL_FLAGS) $(C_FLAGS) $(C__SCHED_2_FLAGS) -I$(INC) -fr=$(OBJ) -fs=$(OBJ) -ft=$(OBJ)
 
 CPP_OBJS = $(patsubst %.cpp,$(OBJ)/%.obj,$(notdir $(CPP_SOURCE)))
 
 $(CPP_OBJS): $(OBJ)/%.obj: %.cpp
-	$(CC) $^ $(STANDARD_FLAGS) $(EXTRA_FLAGS) $(UNIVERSAL_FLAGS) $(CPP_FLAGS) -I$(INC) -fr $(OBJ) -fs $(OBJ) -ft $(OBJ)
+	$(CC) $^ $(STANDARD_FLAGS) $(EXTRA_FLAGS) $(UNIVERSAL_FLAGS) $(CPP_FLAGS) -I$(INC) -fr=$(OBJ) -fs=$(OBJ) -ft=$(OBJ)
 
 C__SCHED_1_OBJS = $(patsubst %.c,$(OBJ)/%.obj,$(notdir $(C__SCHED_1_SOURCE)))
 
 $(C__SCHED_1_OBJS): $(OBJ)/%.obj: %.c
-	$(CC) $^ $(STANDARD_FLAGS) $(EXTRA_FLAGS) $(UNIVERSAL_FLAGS) $(C_FLAGS) $(C__SCHED_1_FLAGS) -I$(INC) -fr $(OBJ) -fs $(OBJ) -ft $(OBJ)
+	$(CC) $^ $(STANDARD_FLAGS) $(EXTRA_FLAGS) $(UNIVERSAL_FLAGS) $(C_FLAGS) $(C__SCHED_1_FLAGS) -I$(INC) -fr=$(OBJ) -fs=$(OBJ) -ft=$(OBJ)
 
 library: $(CX_OBJS) $(ASM_OBJS) $(C_OBJS) $(LINASM_OBJS) $(CX0_OBJS) $(CPP_C_OBJS) $(C__SCHED_2_OBJS) $(CPP_OBJS) $(C__SCHED_1_OBJS)
 	$(CD) $(OBJ); $(AR) -qa $(LIB) *.obj
