@@ -1,4 +1,21 @@
-build/
+*.asm
+!/src/call_stub.asm
+!/src/divi.asm
+!/src/divi_t.asm
+!/src/divu.asm
+!/src/divu_t.asm
+!/src/memcpy64.asm
+!/src/push.asm
+!/src/remi.asm
+!/src/remi_t.asm
+!/src/remu.asm
+!/src/remu_t.asm
+!/src/setjmp.asm
+!/src/strasg.asm
+!/src/strasgi_t.asm
+!/src/tdeh_uwentry_c6000.asm
+!/src/tls_get_tp.asm
+
 compile_commands.json
 
 mklib

@@ -1179,7 +1179,7 @@ endif
 
 
 
-OBJ := build
+OBJ := .
 CX_OBJS = $(patsubst %.cx,$(OBJ)/%.obj,$(notdir $(CX_SOURCE)))
 
 $(CX_OBJS): $(OBJ)/%.obj: %.cx
