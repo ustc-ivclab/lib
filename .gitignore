@@ -18,10 +18,12 @@
 
 compile_commands.json
 
+__TI_$$LIBINFO
 mklib
 *.a
 *.obj
 *.lib
+*.libinfo
 
 *.pdf
 *.zip
