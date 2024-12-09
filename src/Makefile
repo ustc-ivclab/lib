@@ -1179,6 +1179,9 @@ endif
 
 
 
+library: $(CX_OBJS) $(ASM_OBJS) $(C_OBJS) $(LINASM_OBJS) $(CX0_OBJS) $(CPP_C_OBJS) $(C__SCHED_2_OBJS) $(CPP_OBJS) $(C__SCHED_1_OBJS)
+	$(CD) $(OBJ); $(AR) -qa $(LIB) *.obj
+
 OBJ := .
 CX_OBJS = $(patsubst %.cx,$(OBJ)/%.obj,$(notdir $(CX_SOURCE)))
 
@@ -1224,9 +1227,6 @@ C__SCHED_1_OBJS = $(patsubst %.c,$(OBJ)/%.obj,$(notdir $(C__SCHED_1_SOURCE)))
 
 $(C__SCHED_1_OBJS): $(OBJ)/%.obj: %.c
 	$(CC) $^ $(STANDARD_FLAGS) $(EXTRA_FLAGS) $(UNIVERSAL_FLAGS) $(C_FLAGS) $(C__SCHED_1_FLAGS) -I$(INC) -fr=$(OBJ) -fs=$(OBJ) -ft=$(OBJ)
-
-library: $(CX_OBJS) $(ASM_OBJS) $(C_OBJS) $(LINASM_OBJS) $(CX0_OBJS) $(CPP_C_OBJS) $(C__SCHED_2_OBJS) $(CPP_OBJS) $(C__SCHED_1_OBJS)
-	$(CD) $(OBJ); $(AR) -qa $(LIB) *.obj
 
 info:
 	@echo $(UNIVERSAL_FLAGS)
